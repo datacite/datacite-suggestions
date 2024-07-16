@@ -1,0 +1,59 @@
+name: Idea
+description: Ideas and suggestions from the DataCite community about product features, metadata schema, and more.
+title: [Idea]
+labels: idea
+assignees: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Is your feature request related to a problem? Please describe.**
+        A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+  - type: textarea
+    id: problem_description
+    attributes:
+      label: Problem Description
+      description: A clear and concise description of what the problem is.
+      placeholder: Describe the problem...
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **Describe the solution you'd like**
+        A clear and concise description of what you want to happen.
+  - type: textarea
+    id: solution_description
+    attributes:
+      label: Solution Description
+      description: A clear and concise description of what you want to happen.
+      placeholder: Describe the solution...
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **Describe alternatives you've considered**
+        A clear and concise description of any alternative solutions or features you've considered.
+  - type: textarea
+    id: alternatives_description
+    attributes:
+      label: Alternatives Considered
+      description: A clear and concise description of any alternative solutions or features you've considered.
+      placeholder: Describe alternatives...
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        **Additional context**
+        Add any other context or screenshots about the feature request here.
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots about the feature request.
+      placeholder: Additional context...
+    validations:
+      required: false
