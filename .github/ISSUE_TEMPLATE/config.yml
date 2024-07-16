@@ -1,0 +1,7 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Need help with a question or issue?
+    about: Contacting support@datacite.org is a great place to start. 
+  - name: DataCite Support
+    url: https://support.datacite.org/
+    about: Check the DataCite Support site for comprehensive technical guides, training materials, and tips to help you successfully use DataCite services.
