@@ -3,11 +3,6 @@ description: Ideas and suggestions from the DataCite community about product fea
 labels: idea
 
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ****
-        A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
   - type: textarea
     id: problem_description
     attributes:
@@ -16,11 +11,6 @@ body:
       placeholder: Describe the problem...
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: |
-        ****
-        A clear and concise description of what you want to happen.
   - type: textarea
     id: solution_description
     attributes:
