@@ -1,8 +1,8 @@
 name: Idea
 description: Ideas and suggestions from the DataCite community about product features, metadata schema, and more.
-title: [Idea]
+title: "[Idea]"
 labels: idea
-assignees: ''
+assignees:
 
 body:
   - type: markdown
