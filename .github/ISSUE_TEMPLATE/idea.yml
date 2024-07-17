@@ -1,37 +1,34 @@
 name: Idea or suggestion
 description: Ideas and suggestions from the DataCite community about product features, metadata schema, and more.
 labels: idea
-title: "Your idea title"
+title: "[IDEA] "
 
 body:
   - type: textarea
     id: problem_description
     attributes:
-      label: Is your feature request related to a problem?
-      description: A clear and concise description of what the problem is. Ex. I'm always frustrated when ...
+      label: 🧩 What is the problem that your idea solves?
       placeholder: Describe the problem...
     validations:
       required: true
   - type: textarea
     id: solution_description
     attributes:
-      label: What solution would might meet your needs?
-      description: A clear and concise description of what you want to happen.
+      label: 🛠️ What solution would might meet your needs?
       placeholder: Describe the solution...
     validations:
       required: true
   - type: textarea
     id: alternatives_description
     attributes:
-      label: What alernatives have you tried or considered?
-      description: A clear and concise description of any alternative solutions or features you've considered.
-      placeholder: Describe alternatives...
+      label: 🗺️ What alternatives have you tried or considered?
+      placeholder: Describe alternative solutions, features, or workarounds...
     validations:
       required: false
   - type: textarea
     id: additional_context
     attributes:
-      label: Is there anything else you'd like to share?
+      label: 🌟 Is there anything else you'd like to share?
       description: Add any other context or screenshots about the feature request.
       placeholder: Additional context...
     validations:
