@@ -7,28 +7,28 @@ body:
   - type: textarea
     id: problem_description
     attributes:
-      label: 🧩 What is the problem that your idea solves?
+      label: What is the problem that your idea solves?
       placeholder: Describe the problem that inspired your idea...
     validations:
       required: true
   - type: textarea
     id: solution_description
     attributes:
-      label: 🛠️ What solution would might meet your needs?
+      label: What solution would might meet your needs?
       placeholder: Describe the solution that you are imagining...
     validations:
       required: true
   - type: textarea
     id: alternatives_description
     attributes:
-      label: 🗺️ What alternatives have you tried or considered?
+      label: What alternatives have you tried or considered?
       placeholder: Describe alternative solutions, features, or workarounds...
     validations:
       required: false
   - type: textarea
     id: additional_context
     attributes:
-      label: 🌟 Is there anything else you'd like to share?
+      label: Is there anything else you'd like to share?
       placeholder: Additional context or screenshots about your idea...
     validations:
       required: false
