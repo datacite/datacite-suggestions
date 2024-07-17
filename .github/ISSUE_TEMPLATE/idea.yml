@@ -8,14 +8,14 @@ body:
     id: problem_description
     attributes:
       label: 🧩 What is the problem that your idea solves?
-      placeholder: Describe the problem...
+      placeholder: Describe the problem that inspired your idea...
     validations:
       required: true
   - type: textarea
     id: solution_description
     attributes:
       label: 🛠️ What solution would might meet your needs?
-      placeholder: Describe the solution...
+      placeholder: Describe the solution that you are imagining...
     validations:
       required: true
   - type: textarea
@@ -29,7 +29,6 @@ body:
     id: additional_context
     attributes:
       label: 🌟 Is there anything else you'd like to share?
-      description: Add any other context or screenshots about the feature request.
-      placeholder: Additional context...
+      placeholder: Additional context or screenshots about your idea...
     validations:
       required: false
