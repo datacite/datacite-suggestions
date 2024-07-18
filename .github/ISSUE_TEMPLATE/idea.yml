@@ -51,6 +51,7 @@ body:
       description: You may select more than one.
       options:
         - label: DataCite Member
+        - label: DataCite collaborator or partner
         - label: Integrator or Service Provider
         - label: Metadata harvester
         - label: Researcher
