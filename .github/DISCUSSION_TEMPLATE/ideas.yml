@@ -1,0 +1,63 @@
+name: Idea or suggestion
+description: Ideas and suggestions from the DataCite community about product features, metadata schema, and more.
+labels: idea
+title: "<Your idea title>"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!NOTE]
+        > Thank you for submitting your idea! We are always working to improve DataCite services and the DataCite Metadata Schema. Ideas from the community help us make decisions about what to work on. If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
+        
+        ## Describe your idea
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What is the problem that your idea solves?
+      placeholder: Describe the problem that inspired your idea...
+    validations:
+      required: true
+  - type: textarea
+    id: solution-description
+    attributes:
+      label: What solution might meet your needs?
+      placeholder: Describe the solution that you are imagining...
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Extra information
+        _These fields are not required and help us understand more about your idea._
+  - type: textarea
+    id: alternatives-description
+    attributes:
+      label: What alternatives have you tried or considered?
+      placeholder: Describe alternative solutions, features, or workarounds...
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Is there anything else you'd like to share?
+      placeholder: Additional context or screenshots about your idea...
+    validations:
+      required: false
+  - type: checkboxes
+    id: stakeholder-group
+    attributes:
+      label: What group(s) would benefit from your idea?
+      description: You may select more than one.
+      options:
+        - label: DataCite Member
+        - label: DataCite collaborator or partner
+        - label: Integrator or Service Provider
+        - label: Metadata harvester
+        - label: Researcher
+        - label: Funder
+        - label: Other
+  - type: input
+    id: other
+    attributes:
+      label: If other, please describe.
