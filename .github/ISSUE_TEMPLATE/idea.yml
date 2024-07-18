@@ -7,8 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Describe your idea
-        _These fields are required._
+        ### Describe your idea
   - type: textarea
     id: problem-description
     attributes:
@@ -25,8 +24,9 @@ body:
       required: true
   - type: markdown
     attributes:
-      value: "## Extra information
-      _These fields are not required and help us understand more about your idea._"
+      value: |
+        ### Extra information
+        _These fields are not required and help us understand more about your idea._
   - type: textarea
     id: alternatives-description
     attributes:
