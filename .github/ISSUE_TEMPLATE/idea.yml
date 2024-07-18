@@ -7,8 +7,8 @@ body:
   - type: markdown
     attributes:
       value: |
-      "## Describe your idea
-      _These fields are required._"
+        ## Describe your idea
+        _These fields are required._
   - type: textarea
     id: problem-description
     attributes:
