@@ -4,6 +4,9 @@ labels: idea
 title: "[IDEA] "
 
 body:
+  - type: markdown
+    attributes:
+      value: "## Describe your idea"
   - type: textarea
     id: problem_description
     attributes:
@@ -18,6 +21,9 @@ body:
       placeholder: Describe the solution that you are imagining...
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: "## Extra information"
   - type: textarea
     id: alternatives_description
     attributes:
