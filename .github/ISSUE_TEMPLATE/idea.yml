@@ -7,7 +7,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        "Thank you for submitting your idea for improving DataCite services! Ideas help us make decisions about what to work on next. If you need immediate support, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org). 
+        Thank you for submitting your idea! We are always working to improve DataCite services and the DataCite Metadata Schema. Ideas from the community help us make decisions about what to work on next. 
+        If you need immediate support, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org). 
         ### Describe your idea"
   - type: textarea
     id: problem-description
