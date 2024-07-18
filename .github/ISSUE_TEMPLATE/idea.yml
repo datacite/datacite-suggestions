@@ -6,7 +6,8 @@ title: "[IDEA] <Your idea title>"
 body:
   - type: markdown
     attributes:
-      value: "## Describe your idea"
+      value: "## Describe your idea
+      _These fields are required._"
   - type: textarea
     id: problem-description
     attributes:
@@ -23,7 +24,8 @@ body:
       required: true
   - type: markdown
     attributes:
-      value: "## Extra information"
+      value: "## Extra information
+      _These fields are not required and help us understand more about your idea._"
   - type: textarea
     id: alternatives-description
     attributes:
@@ -45,8 +47,8 @@ body:
       description: You may select more than one.
       options:
         - label: DataCite Member
-        - label: Metadata harvester
         - label: Integrator or Service Provider
+        - label: Metadata harvester
         - label: Researcher
         - label: Funder
         - label: Other
