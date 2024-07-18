@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
         > [!NOTE]
-        > Thank you for submitting your idea! We are always working to improve DataCite services and the DataCite Metadata Schema. Ideas from the community help us make decisions about what to work on. If you need immediate support, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
+        > Thank you for submitting your idea! We are always working to improve DataCite services and the DataCite Metadata Schema. Ideas from the community help us make decisions about what to work on. If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
         
         ## Describe your idea
   - type: textarea
@@ -28,7 +28,6 @@ body:
   - type: markdown
     attributes:
       value: |
-      
         ## Extra information
         _These fields are not required and help us understand more about your idea._
   - type: textarea
