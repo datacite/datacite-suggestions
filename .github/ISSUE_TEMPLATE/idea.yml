@@ -21,7 +21,7 @@ body:
   - type: textarea
     id: solution-description
     attributes:
-      label: What solution would might meet your needs?
+      label: What solution might meet your needs?
       placeholder: Describe the solution that you are imagining...
     validations:
       required: true
