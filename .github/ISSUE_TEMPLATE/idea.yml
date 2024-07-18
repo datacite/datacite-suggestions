@@ -47,7 +47,7 @@ body:
   - type: checkboxes
     id: stakeholder-group
     attributes:
-      label: What group(s) do you represent? 
+      label: What group(s) would benefit from your idea?
       description: You may select more than one.
       options:
         - label: DataCite Member
