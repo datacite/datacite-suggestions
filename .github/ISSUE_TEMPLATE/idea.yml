@@ -6,7 +6,8 @@ title: "[IDEA] <Your idea title>"
 body:
   - type: markdown
     attributes:
-      value: "## Describe your idea
+      value: |
+      "## Describe your idea
       _These fields are required._"
   - type: textarea
     id: problem-description
