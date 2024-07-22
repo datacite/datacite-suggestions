@@ -6,8 +6,9 @@ body:
     attributes:
       value: |
         > [!NOTE]
-        > Thank you for submitting your suggestion! We are always working to enhance and expand the DataCite Metadata Schema. Suggestions from the community help us make decisions about what to work on. 
-        > [!IMPORTANT]
+        > Thank you for submitting your suggestion! We are always working to enhance and expand the DataCite Metadata Schema. Suggestions from the community help us make decisions about what to work on.
+
+        > [!TIP]
         > If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
         
         ## Describe your suggestion
