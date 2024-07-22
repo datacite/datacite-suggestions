@@ -1,4 +1,4 @@
-labels: "Type: General suggestion"
+labels: "Type: Metadata Schema suggestion"
 title: "<Your suggestion title>"
 
 body:
@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         > [!NOTE]
-        > Thank you for submitting your suggestion! We are always working to enhance and expand DataCite services. Suggestions from the community help us make decisions about what to work on. 
+        > Thank you for submitting your suggestion! We are always working to enhance and expand the DataCite Metadata Schema. Suggestions from the community help us make decisions about what to work on. 
         > [!IMPORTANT]
         > If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
         
