@@ -1,0 +1,18 @@
+name: Update labels
+on:
+  label:
+    types: edited
+jobs:
+  create_labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - run: gh label edit "$NAME" --name "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R datacite/product-suggestions-triage --force
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NAME: ${{ github.event.label.name }}
+          NEW_NAME: ${{ github.event.changes.color }}
+          NEW_COLOR: ${{ github.event.changes.color }}
+          NEW_DESCRIPTION: ${{ github.event.changes.description }}
