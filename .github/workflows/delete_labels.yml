@@ -1,7 +1,7 @@
 name: Delete labels
 on:
   label:
-    types: created
+    types: deleted
 jobs:
   delete_labels:
     runs-on: ubuntu-latest
