@@ -1,0 +1,17 @@
+name: Create labels
+on:
+  label:
+    types: created
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - run: gh label create "$NAME" -c $COLOR -d "$DESCRIPTION" -r datacite/product-suggestions-triage --force
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NAME: ${{ github.event.label.name }}
+          COLOR: ${{ github.event.label.color }}
+          DESCRIPTION: ${{ github.event.label.description }}
