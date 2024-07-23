@@ -13,3 +13,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NAME: ${{ github.event.label.name }}
+          DEST_REPO: ${{ vars.DEST_REPO }}
