@@ -3,7 +3,7 @@ on:
   label:
     types: created
 jobs:
-  label_issues:
+  create_labels:
     runs-on: ubuntu-latest
     permissions:
       issues: write
