@@ -5,6 +5,7 @@ on:
       - opened
 jobs:
   label_issues:
+    if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
