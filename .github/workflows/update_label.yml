@@ -13,6 +13,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NAME: ${{ github.event.label.name }}
-          NEW_NAME: ${{ github.event.changes.name }}
-          NEW_COLOR: ${{ github.event.changes.color }}
-          NEW_DESCRIPTION: ${{ github.event.changes.description }}
+          NEW_NAME: ${{ github.event.label.name }}
+          NEW_COLOR: ${{ github.event.label.color }}
+          NEW_DESCRIPTION: ${{ github.event.label.description }}
