@@ -1,0 +1,15 @@
+name: Delete labels
+on:
+  label:
+    types: created
+jobs:
+  delete_labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - run: gh label delete "$NAME" --yes -R $DEST_REPO
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NAME: ${{ github.event.label.name }}
