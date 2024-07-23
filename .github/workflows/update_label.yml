@@ -8,7 +8,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R datacite/product-suggestions-triage
+      - run: gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R $DEST_REPO
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -16,3 +16,4 @@ jobs:
           NEW_NAME: "${{ github.event.label.name }}"
           NEW_COLOR: "${{ github.event.label.color }}"
           NEW_DESCRIPTION: "${{ github.event.label.description }}"
+          DEST_REPO: ${{ vars.DEST_REPO }}
