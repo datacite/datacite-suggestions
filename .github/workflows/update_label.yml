@@ -8,7 +8,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: gh label edit "$NAME" --name "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R datacite/product-suggestions-triage --force
+      - run: gh label edit "$NAME" --name "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R datacite/product-suggestions-triage
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
