@@ -8,7 +8,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: gh label create "$NAME" -c $COLOR -d "$DESCRIPTION" -r datacite/product-suggestions-triage --force
+      - run: gh label create "$NAME" -c $COLOR -d "$DESCRIPTION" -R datacite/product-suggestions-triage --force
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
