@@ -8,26 +8,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+      - name: Extract Discussions Link from Issue Body
+        id: extract-link
         run: |
-          pip install PyGithub
+          echo "Extracting discussions link from issue body"
+          LINK=$(echo "${{ github.event.issue.body }}" | grep -o 'https://github.com/.*/discussions/[0-9]*')
+          if [ -z "$LINK" ]; then
+            echo "No discussion link found"
+            echo "::set-output name=discussion_link::"
+          else
+            echo "Discussion link found: $LINK"
+            echo "::set-output name=discussion_link::$LINK"
+          fi
 
-      - name: Run Python script
+      - name: Add Label to Discussion
+        if: steps.extract-link.outputs.discussion_link != ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TRANSFERRED_LABEL: ${{ vars.TRANSFERRED_LABEL }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          GITHUB_REPOSITORY: ${{ github.full_name }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python .github/scripts/update_discussion.py
+          DISCUSSION_URL="${{ steps.extract-link.outputs.discussion_link }}"
+          DISCUSSION_ID=$(echo "$DISCUSSION_URL" | grep -o '[0-9]*$')
+
+          curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/discussions/$DISCUSSION_ID/labels \
+            -d '{"labels":[${{ vars.TRANSFERRED_LABEL }}]}'
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     needs: update-discussion
