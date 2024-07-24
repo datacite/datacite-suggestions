@@ -4,7 +4,28 @@ on:
     types:
       - opened
 jobs:
-  label_issues:
+  update-discussion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install PyGithub
+
+      - name: Run Python script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/scripts/update_discussion.py
+  transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     runs-on: ubuntu-latest
     permissions:
