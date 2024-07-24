@@ -1,7 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Need help with a question or issue?
-    about: Contacting support@datacite.org is a great place to start. 
+  - name: DataCite Suggestions
+    url: https://github.com/datacite/datacite-suggestions-sandbox/discussions
+    about: General suggestions and DataCite Metadata Schema suggestions are collected and discussed in the Discussions tab. 
   - name: DataCite Support
     url: https://support.datacite.org/
-    about: Check the DataCite Support site for comprehensive technical guides, training materials, and tips to help you successfully use DataCite services. Contact support@datacite.org with any questions.
+    about: Contact DataCite Support (support@datacite.org) with any questions. Check the DataCite Support site for comprehensive technical guides, training materials, and tips to help you successfully use DataCite services. 
