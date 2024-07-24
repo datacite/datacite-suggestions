@@ -1,6 +1,6 @@
 labels: ["Category: General suggestion", "Note: Keep in repository"]
 name: Suggestion
-description: "Suggestions from the DataCite community about new features and enhancements to DataCite services. NOTE: Please use the Discussions above to submit your suggestion. All suggestions created as issues will be converted to discussions." 
+description: NOTE: Please use the Discussions tab to submit your suggestion. All suggestions created as issues will be converted to discussions." 
 title: "<Your suggestion title>"
 
 body:
