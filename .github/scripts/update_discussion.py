@@ -1,41 +1,68 @@
-import re
-import os
+
 import requests
+import os
+import re
 
-# Get environment variables
-issue_body = os.getenv('ISSUE_BODY')
-transferred_label = os.getenv('TRANSFERRED_LABEL')
-repo_name = os.getenv('GITHUB_REPOSITORY')
-token = os.getenv('GITHUB_TOKEN')
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+GH_API_URL = "https://api.github.com/"
+GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
+ISSUE_BODY = os.environ.get("ISSUE_BODY")
+TRANSFERRED_LABEL = os.environ.get("TRANSFERRED_LABEL")
 
-# Extract discussion ID from the issue body
-match = re.search(r'https://github.com/.*/discussions/(\d+)', issue_body)
-if match:
-    discussion_id = match.group(1)
+
+def get_discussion_number_from_issue_body(issue_body):
+    discussion_url_pattern = re.compile(r'https://github.com/{}/discussions/(\d+)'.format(GITHUB_REPOSITORY))
+    match = discussion_url_pattern.search(issue_body)
     
-    # GitHub API URL for discussions
-    api_url = f"https://api.github.com/repos/{repo_name}/discussions/{discussion_id}/labels"
-    
-    # Headers for API request
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    
-    # Data for adding a label
-    data = {
-        "labels": [transferred_label]
-    }
-    
-    # Make the API request to add the label
-    response = requests.post(api_url, headers=headers, json=data)
-    
+    if match:
+        discussion_number = match.group(1)
+        return discussion_number
+    return None
+
+def get_label_id(label_name): 
+    response = requests.get(GH_API_URL + "repos/" + GITHUB_REPOSITORY + "/labels/" + label_name, headers={"Authorization": "token " + GITHUB_TOKEN})
+
     if response.status_code == 200:
-        print(f"Label added to discussion {discussion_id}.")
+        return response.json()["node_id"]
     else:
-        print(f"Failed to add label: {response.status_code}, {response.text}")
-        print(discussion_id)
-        print(api_url)
-        print(transferred_label)
-else:
-    print("No discussion link found in the issue body.")
+        return None
+
+def get_discussion_id(discussion_number):
+    owner = GITHUB_REPOSITORY.split('/')[0]
+    name = GITHUB_REPOSITORY.split('/')[1]
+    query = """
+        {
+            repository(owner: "datacite", name: "datacite-suggestions") {
+                    discussion(number: 45) {
+                    id
+                }
+            }
+        }
+    """
+    response = requests.post(GH_API_URL + "graphql", json={"query": query}, headers={"Authorization": "bearer " + GITHUB_TOKEN})
+
+    if response.status_code == 200:
+        return response.json().get("data").get("repository").get("discussion").get("id")
+    else:
+        return None
+
+def update_discussion_with_label(discussion_id, label_id):
+    query = f"""
+        mutation {{
+            addLabelsToLabelable(
+                input:{{
+                labelableId: "{discussion_id}",
+                labelIds: "{label_id}"
+                }}
+            ) {{
+                clientMutationId
+            }}
+    }}
+    """
+    response = requests.post(GH_API_URL + "graphql", json={"query": query}, headers={"Authorization": "bearer " + GITHUB_TOKEN})
+    return
+
+discussion_number = get_discussion_number_from_issue_body(ISSUE_BODY)
+label_id = get_label_id(TRANSFERRED_LABEL)
+discussion_id = get_discussion_id(discussion_number)
+update_discussion_with_label(discussion_id, label_id)
