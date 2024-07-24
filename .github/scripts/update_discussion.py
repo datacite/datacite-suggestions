@@ -1,4 +1,3 @@
-from github import Github
 import re
 import os
 import requests
