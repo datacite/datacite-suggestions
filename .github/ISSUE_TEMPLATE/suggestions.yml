@@ -1,6 +1,6 @@
 labels: ["Category: General suggestion", "Note: Keep in repository"]
 name: Suggestion
-description: NOTE: Please use the Discussions tab to submit your suggestion. All suggestions created as issues will be converted to discussions." 
+description: "NOTE: Please use the Discussions tab to submit your suggestion. All suggestions created as issues will be converted to discussions." 
 title: "<Your suggestion title>"
 
 body:
