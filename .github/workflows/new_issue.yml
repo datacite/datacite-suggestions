@@ -11,31 +11,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Extract Discussions Link from Issue Body
-        id: extract-link
-        run: |
-          echo "Extracting discussions link from issue body"
-          LINK=$(echo "${{ github.event.issue.body }}" | grep -o 'https://github.com/.*/discussions/[0-9]*')
-          if [ -z "$LINK" ]; then
-            echo "No discussion link found"
-            echo "::set-output name=discussion_link::"
-          else
-            echo "Discussion link found: $LINK"
-            echo "::set-output name=discussion_link::$LINK"
-          fi
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Add Label to Discussion
-        if: steps.extract-link.outputs.discussion_link != ''
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+
+      - name: Run Python script to check issue body and update discussion
         env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          TRANSFERRED_LABE: ${{ vars.TRANSFERRED_LABEL }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          export DISCUSSION_URL="${{ steps.extract-link.outputs.discussion_link }}"
-          export DISCUSSION_ID=$(echo "$DISCUSSION_URL" | grep -o '[0-9]*$')
-
-          curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${{ github.repository }}/discussions/$DISCUSSION_ID/labels \
-            -d '{"labels":["${{ vars.TRANSFERRED_LABEL }}"]}'
+        run: python update_discussion_label.py
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     needs: update-discussion
