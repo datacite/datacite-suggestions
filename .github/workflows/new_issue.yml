@@ -23,7 +23,7 @@ jobs:
       - name: Run Python script to check issue body and update discussion
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-          TRANSFERRED_LABE: ${{ vars.TRANSFERRED_LABEL }}
+          TRANSFERRED_LABEL: ${{ vars.TRANSFERRED_LABEL }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python .github/scripts/update_discussion.py
