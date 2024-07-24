@@ -26,7 +26,7 @@ jobs:
           TRANSFERRED_LABE: ${{ vars.TRANSFERRED_LABEL }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python update_discussion.py
+        run: python .github/scripts/update_discussion.py
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     needs: update-discussion
