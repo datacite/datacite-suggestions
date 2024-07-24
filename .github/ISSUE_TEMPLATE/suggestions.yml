@@ -1,0 +1,76 @@
+labels: ["Category: General suggestion", "Note: Keep in repository"]
+name: Suggestion
+description: "Suggestions from the DataCite community about new features and enhancements to DataCite services. NOTE: Please use the Discussions above to submit your suggestion. All suggestions created as issues will be converted to discussions." 
+title: "<Your suggestion title>"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > Suggestions submitted with this form will be migrated from the Issues tab to the Discussions tab in Github. 
+        
+        > [!NOTE]
+        > Thank you for submitting your suggestion! We are always working to enhance and expand DataCite services and the DataCite Metadata Schema. Suggestions from the community help us make decisions about what to work on. 
+
+        > [!TIP]
+        > If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
+        
+        ## Describe your suggestion
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What is the problem that your suggestion solves?
+      placeholder: Describe the problem that inspired your suggestion...
+    validations:
+      required: true
+  - type: textarea
+    id: solution-description
+    attributes:
+      label: What solution might meet your needs?
+      placeholder: Describe the solution that you are imagining...
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Extra information
+        _These fields are not required and help us understand more about your suggestion._
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+  - type: input
+    id: organization
+    attributes:
+      label: Your organization
+  - type: textarea
+    id: alternatives-description
+    attributes:
+      label: What alternatives have you tried or considered?
+      placeholder: Describe alternative solutions, features, or workarounds...
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Is there anything else you would like to share?
+      placeholder: Additional context or screenshots about your suggestion...
+    validations:
+      required: false
+  - type: checkboxes
+    id: stakeholder-group
+    attributes:
+      label: What group(s) would benefit from your suggestion?
+      description: You may select more than one.
+      options:
+        - label: DataCite members registering DOIs and metadata and administering accounts
+        - label: Developers building integrations with DataCite services
+        - label: Harvesters who index DataCite DOIs and metadata
+        - label: Individuals or institutions analyzing DataCite DOIs and metadata
+        - label: DataCite staff
+        - label: Other
+  - type: input
+    id: other
+    attributes:
+      label: If other group(s), please describe.
