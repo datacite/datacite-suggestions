@@ -1,30 +1,39 @@
 from github import Github
 import re
 import os
+import requests
 
-# Initialize GitHub client
+# Get environment variables
+issue_body = os.getenv('ISSUE_BODY')
+transferred_label = os.getenv('TRANSFERRED_LABEL')
+repo_name = os.getenv('GITHUB_REPOSITORY')
 token = os.getenv('GITHUB_TOKEN')
-label = os.getenv('TRANSFERRED_LABEL')
-g = Github(token)
 
-# Get repository
-repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))
-
-# Get the issue from the environment
-issue_number = int(os.getenv('ISSUE_NUMBER'))
-issue = repo.get_issue(number=issue_number)
-
-# Regular expression to find GitHub Discussions links
-discussions_pattern = re.compile(r'https://github.com/.*/discussions/(\d+)')
-
-# Search for discussions link in the issue body
-match = discussions_pattern.search(issue.body)
-
+# Extract discussion ID from the issue body
+match = re.search(r'https://github.com/.*/discussions/(\d+)', issue_body)
 if match:
-    discussion_number = match.group(1)
-    discussion = repo.get_discussion(discussion_number)
+    discussion_id = match.group(1)
     
-    # Add label to the discussion
-    discussion.edit(labels=[label])  # Replace 'your-label' with the desired label
-
-print(f'Updated discussion #{discussion_number} with label.')
+    # GitHub API URL for discussions
+    api_url = f"https://api.github.com/repos/{repo_name}/discussions/{discussion_id}/labels"
+    
+    # Headers for API request
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    
+    # Data for adding a label
+    data = {
+        "labels": [transferred_label]
+    }
+    
+    # Make the API request to add the label
+    response = requests.post(api_url, headers=headers, json=data)
+    
+    if response.status_code == 200:
+        print(f"Label added to discussion {discussion_id}.")
+    else:
+        print(f"Failed to add label: {response.status_code}, {response.text}")
+else:
+    print("No discussion link found in the issue body.")
