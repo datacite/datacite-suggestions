@@ -34,5 +34,8 @@ if match:
         print(f"Label added to discussion {discussion_id}.")
     else:
         print(f"Failed to add label: {response.status_code}, {response.text}")
+        print(discussion_id)
+        print(api_url)
+        print(transferred_label)
 else:
     print("No discussion link found in the issue body.")
