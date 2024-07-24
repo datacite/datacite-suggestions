@@ -24,10 +24,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TRANSFERRED_LABEL: ${{ vars.TRANSFERRED_LABEL }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.full_name }}
         run: |
           python .github/scripts/update_discussion.py
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
+    needs: update-discussion
     runs-on: ubuntu-latest
     permissions:
       issues: write
