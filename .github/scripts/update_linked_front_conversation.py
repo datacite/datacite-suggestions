@@ -43,7 +43,7 @@ def get_discussion_number_from_issue_body(issue_body):
     return None
 
 def add_comment_to_conversation(conversation_id):
-    comment = f"""**🎀 Product suggestion posted 🎀**\n\n#{DISCUSSION_NUMBER} "{DISCUSSION_TITLE}\"\n_{GITHUB_USER}_\n\n{DISCUSSION_URL}"""
+    comment = f"""**🎀 Product Suggestion Posted 🎀**\n\n#{DISCUSSION_NUMBER} "{DISCUSSION_TITLE}\"\n_{GITHUB_USER}_\n\n{DISCUSSION_URL}"""
     api_url = FRONT_API_URL + "conversations/" + conversation_id + "/comments"
 
     response = requests.post(api_url, json={"body": comment, "author_id": FRONT_USER}, headers={"Authorization": "Bearer " + FRONT_TOKEN})
