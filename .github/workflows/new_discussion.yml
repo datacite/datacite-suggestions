@@ -1,0 +1,33 @@
+name: Update linked front conversation
+on:
+  discussion:
+    types:
+      - created
+jobs:
+  update-front:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+
+      - name: Run python script to update linked front conversation
+        env:
+          DISCUSSION_BODY: ${{ github.event.discussion.body }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          DISCUSSION_URL: ${{ github.event.discussion.html_url }}
+          DISCUSSION_TITLE: ${{ github.event.discussion.title }}
+          DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+          GITHUB_USER: ${{ github.event.discussion.user.login }}
+          FRONT_USER: ${{ vars.FRONT_USER }}
+          FRONT_TOKEN: ${{ secrets.FRONT_TOKEN }}
+        run: python .github/scripts/update_linked_front_conversation.py
