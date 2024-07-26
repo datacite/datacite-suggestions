@@ -36,13 +36,14 @@ def delete_label_in_dest_repo(label_name):
 print(EVENT_TYPE)
 
 if EVENT_TYPE == "edited":
-    dest_label = get_label_in_repo(NAME, DEST_REPO)
+    from_name = FROM_NAME if FROM_NAME else NAME
+    dest_label = get_label_in_repo(from_name, DEST_REPO)
     local_label = get_label_in_repo(NEW_NAME, GH_REPO)
 
     changed = dest_label.get("name") != local_label.get("name") or dest_label.get("color") != local_label.get("color") or dest_label.get("description") != local_label.get("description")
     
     if dest_label and changed:
-        update_label_in_dest_repo(NAME, local_label)
+        update_label_in_dest_repo(from_name, local_label)
 
 if EVENT_TYPE == "deleted":
     label_name = NAME
