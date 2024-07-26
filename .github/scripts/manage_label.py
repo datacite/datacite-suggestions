@@ -7,6 +7,7 @@ GH_API_URL = "https://api.github.com/"
 DEST_REPO = os.environ.get("DEST_REPO")
 GH_REPO = os.environ.get("GH_REPO")
 NAME = os.environ.get("NAME")
+FROM_NAME = os.environ.get("FROM_NAME")
 NEW_NAME = os.environ.get("NEW_NAME")
 EVENT_TYPE = os.environ.get("EVENT_TYPE")
 
