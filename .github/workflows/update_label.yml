@@ -8,7 +8,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R $DEST_REPO
+      - run: gh label list -R $DEST_REPO | grep "$NAME" && gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R $DEST_REPO
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
