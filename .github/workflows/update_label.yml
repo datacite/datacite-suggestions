@@ -1,27 +1,24 @@
 name: Update labels
 on:
   label:
-    types: edited
+    types: [edited, deleted]
 jobs:
-  update_labels:
+  update-front:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - run: |
-          response=$(gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R $DEST_REPO 2>&1)
-          exit_code=$?
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-          echo $response
-          echo $exit_code
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-          if [[ "$response" == *"404"* ]] || [[ $exit_code != 1 ]]; then
-            echo "Success"
-            exit 0
-          else
-            echo "Failure"
-            exit 1
-          fi
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+
+      - name: Manage other labels
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -30,3 +27,4 @@ jobs:
           NEW_COLOR: "${{ github.event.label.color }}"
           NEW_DESCRIPTION: "${{ github.event.label.description }}"
           DEST_REPO: ${{ vars.DEST_REPO }}
+        run: python .github/scripts/manage_labels.py
