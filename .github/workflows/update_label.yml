@@ -20,7 +20,7 @@ jobs:
 
       - name: Manage other labels
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
           FROM_NAME: ${{ github.event.changes.name.from }}
           NAME: ${{ github.event.label.name }}
