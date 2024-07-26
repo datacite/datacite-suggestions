@@ -27,4 +27,4 @@ jobs:
           NEW_COLOR: "${{ github.event.label.color }}"
           NEW_DESCRIPTION: "${{ github.event.label.description }}"
           DEST_REPO: ${{ vars.DEST_REPO }}
-        run: python .github/scripts/manage_labels.py
+        run: python .github/scripts/manage_label.py
