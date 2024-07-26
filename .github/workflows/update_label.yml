@@ -12,9 +12,14 @@ jobs:
           response=$(gh label edit "$NAME" -n "$NEW_NAME" -c $NEW_COLOR -d "$NEW_DESCRIPTION" -R $DEST_REPO 2>&1)
           exit_code=$?
 
+          echo $response
+          echo $exit_code
+
           if [[ "$response" == *"404"* ]] || [[ $exit_code != 1 ]]; then
+            echo "Success"
             exit 0
           else
+            echo "Failure"
             exit 1
           fi
         env:
