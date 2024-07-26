@@ -47,5 +47,5 @@ if EVENT_TYPE == "edited":
 
 if EVENT_TYPE == "deleted":
     label_name = NAME
-    if label_exists_in_dest_repo(label_name):
+    if get_label_in_repo(label_name, DEST_REPO):
         delete_label_in_dest_repo(label_name)
