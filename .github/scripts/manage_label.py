@@ -20,7 +20,7 @@ def get_label_in_repo(label_name, repo):
         return {}
 
 def update_label_in_dest_repo(label_name, local_label):
-    payload = {"new_name": local_label.get("name"), "color": local_label.get("color"), "description": local_label.get("description")}
+    payload = {"new_name": local_label.get("name"), "color": local_label.get("color"), "description": local_label.get("description", "")}
     response = requests.patch(GH_API_URL + "repos/" + DEST_REPO + "/labels/" + label_name, headers={"Authorization": "bearer " + GITHUB_TOKEN}, json=payload)
     if response.status_code == 200:
         print("Success")
