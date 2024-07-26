@@ -3,7 +3,7 @@ on:
   label:
     types: [edited, deleted]
 jobs:
-  update-front:
+  update-label:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

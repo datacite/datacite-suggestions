@@ -33,6 +33,8 @@ def delete_label_in_dest_repo(label_name):
     else:
         print("Failed")
 
+print(EVENT_TYPE)
+
 if EVENT_TYPE == "edited":
     dest_label = get_label_in_repo(NAME, DEST_REPO)
     local_label = get_label_in_repo(NEW_NAME, GH_REPO)
