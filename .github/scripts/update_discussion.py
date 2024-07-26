@@ -30,10 +30,10 @@ def get_label_id(label_name):
 def get_discussion_id(discussion_number):
     owner = GITHUB_REPOSITORY.split('/')[0]
     name = GITHUB_REPOSITORY.split('/')[1]
-    query = """
+    query = f"""
         {
-            repository(owner: "datacite", name: "datacite-suggestions") {
-                    discussion(number: 45) {
+            repository(owner: "{owner}", name: "{name}") {
+                    discussion(number: {discussion_number}) {
                     id
                 }
             }
