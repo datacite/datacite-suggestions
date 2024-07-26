@@ -31,13 +31,13 @@ def get_discussion_id(discussion_number):
     owner = GITHUB_REPOSITORY.split('/')[0]
     name = GITHUB_REPOSITORY.split('/')[1]
     query = f"""
-        {
-            repository(owner: "{owner}", name: "{name}") {
-                    discussion(number: {discussion_number}) {
+        {{
+            repository(owner: "{owner}", name: "{name}") {{
+                    discussion(number: {discussion_number}) {{
                     id
-                }
-            }
-        }
+                }}
+            }}
+        }}
     """
     response = requests.post(GH_API_URL + "graphql", json={"query": query}, headers={"Authorization": "bearer " + GITHUB_TOKEN})
 
