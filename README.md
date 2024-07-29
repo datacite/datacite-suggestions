@@ -8,12 +8,12 @@ DataCite Suggestions is a hub for suggestions from the DataCite community about 
 1. Go to the [Discussions](https://github.com/datacite/datacite-suggestions/discussions) tab in DataCite Suggestions. 
 2. We recommend first reviewing and searching the suggestions on the board to see if your suggestion has already been proposed.
    - If it has, you can contribute to the existing discussion by upvoting the feedback or replying with your use case. 
-4. Click "New discussion." 
-5. The Discussions board is divided into two categories: **General Suggestions** and **Metadata Schema Suggestions**. Select the category that best fits your suggestion.
+3. Click "New discussion." 
+4. The Discussions board is divided into two categories: **General Suggestions** and **Metadata Schema Suggestions**. Select the category that best fits your suggestion.
     - **General Suggestions** is for suggestions from the DataCite community about new features and enhancements to DataCite services.
     - **Metadata Schema Suggestions** is for suggestions to improve the DataCite Metadata Schema, including changes or addition to metadata properties and controlled vocabularies.
-4. Fill in the template with as much information about your suggestion as possible.
-5. Click "Start discussion." 
+5. Fill in the template with as much information about your suggestion as possible.
+6. Click "Start discussion." 
 > [!TIP]
 > If you need immediate support or if an existing feature is not working in the way you would expect, please contact our Support Team at [support@datacite.org](mailto:support@datacite.org).
 
