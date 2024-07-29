@@ -108,7 +108,8 @@ update_discussion_with_label(discussion_id, label_id)
 
 # Update issue with discussion labels
 label_names = [label['name'] for label in discussion_labels]
-label_names.remove(TRANSFERRED_LABEL)
+if TRANSFERRED_LABEL in label_names:
+    label_names.remove(TRANSFERRED_LABEL)
 add_labels_to_issue(label_names)
 
 # Update issue with matching labels from mapping
