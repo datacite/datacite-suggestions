@@ -6,7 +6,6 @@ on:
 jobs:
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
-    needs: update-discussion
     runs-on: ubuntu-latest
     permissions:
       issues: write
