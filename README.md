@@ -1,4 +1,6 @@
-# <img src="https://camo.githubusercontent.com/2bc643228dd0fda4703986d3a364bd2cac7f2cc2ba84b1f694c195384e118c20/68747470733a2f2f64617461636974652e6f72672f77702d636f6e74656e742f75706c6f6164732f323032332f30382f44617461436974652d4c6f676f5f7072696d6172792e737667" alt="DataCite logo" data-canonical-src="https://datacite.org/wp-content/uploads/2023/08/DataCite-Logo_primary.svg" style="max-width: 100px;"> DataCite Suggestions
+<img src="https://camo.githubusercontent.com/2bc643228dd0fda4703986d3a364bd2cac7f2cc2ba84b1f694c195384e118c20/68747470733a2f2f64617461636974652e6f72672f77702d636f6e74656e742f75706c6f6164732f323032332f30382f44617461436974652d4c6f676f5f7072696d6172792e737667" alt="DataCite logo" data-canonical-src="https://datacite.org/wp-content/uploads/2023/08/DataCite-Logo_primary.svg" style="    max-width: 50%; display: block; margin: auto;"> 
+
+# DataCite Suggestions
 DataCite Suggestions is a hub for suggestions from the DataCite community about new features and enhancements to DataCite services and the DataCite Metadata Schema. 
 
 ## How to Submit a Suggestion
