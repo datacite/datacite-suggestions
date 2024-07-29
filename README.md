@@ -1,4 +1,4 @@
-# DataCite Suggestions
+# !(DataCite log)[https://datacite.org/wp-content/uploads/2023/08/DataCite-Logo_primary.svg] DataCite Suggestions
 DataCite Suggestions is a hub for suggestions from the DataCite community about new features and enhancements to DataCite services and the DataCite Metadata Schema. 
 
 ## How to Submit a Suggestion
