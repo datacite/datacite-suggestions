@@ -2,7 +2,7 @@
 DataCite Suggestions is a hub for suggestions from the DataCite community about new features and enhancements to DataCite services and the DataCite Metadata Schema. 
 
 ## How to Submit a Suggestion
-> [!INFO]
+> [!NOTE]
 > We're interested in capturing feedback in an open and public forum on Github. If you would prefer not to use Github to submit your suggestion, feel free to send your suggestion to support@datacite.org. 
 
 1. Go to the [Discussions](https://github.com/datacite/datacite-suggestions/discussions) tab in DataCite Suggestions. 
