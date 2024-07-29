@@ -4,8 +4,34 @@ on:
     types:
       - opened
 jobs:
+  update-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+
+      - name: Run Python script to update issue
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          TRANSFERRED_LABEL: ${{ vars.TRANSFERRED_LABEL }}
+          DEST_REPO: ${{ vars.DEST_REPO }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python .github/scripts/update_issue.py
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
+    needs: update-issue
     runs-on: ubuntu-latest
     permissions:
       issues: write

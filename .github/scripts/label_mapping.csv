@@ -1,0 +1,6 @@
+type,text,label
+check,DataCite members registering DOIs and metadata and administering accounts,Benefits: DataCite members
+check,Developers building integrations with DataCite services,Benefits: Integrators
+check,Harvesters who index DataCite DOIs and metadata,Benefits: Harvesters
+check,Individuals or institutions analyzing DataCite DOIs and metadata,Benefits: Analysts
+check,DataCite staff,Benefits: DataCite staff
