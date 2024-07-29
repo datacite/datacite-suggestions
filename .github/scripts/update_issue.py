@@ -113,5 +113,6 @@ if TRANSFERRED_LABEL in label_names:
 add_labels_to_issue(label_names)
 
 # Update issue with matching labels from mapping
+print(os. getcwd())
 matching_labels = get_matching_labels(discussion_body)
 add_labels_to_issue(matching_labels)
