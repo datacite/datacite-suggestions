@@ -85,7 +85,7 @@ def update_discussion_with_label(discussion_id, label_id):
     return
 
 def get_matching_labels(discussion_body):
-    reader = list(csv.DictReader(open("label_mapping.csv", "r")))
+    reader = list(csv.DictReader(open(".github/scripts/label_mapping.csv", "r")))
 
     matching_labels = []
     for row in reader:
