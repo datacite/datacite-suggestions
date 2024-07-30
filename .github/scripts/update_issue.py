@@ -92,8 +92,8 @@ def get_matching_labels(discussion_body):
         row_type = row.get("type")
         match row_type:
             case "check":
-                text_to_match = "- [X] " + row.get("text")
-                if text_to_match in discussion_body:
+                regex = r"- \[[x|X]\]\s.*" + row.get("text")
+                if re.search(regex, discussion_body):
                     matching_labels.append(row.get("label"))
     return matching_labels
 
