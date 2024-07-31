@@ -23,7 +23,7 @@ jobs:
         env:
           DISCUSSION_BODY: ${{ github.event.discussion.body }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCUSSION_URL: ${{ github.event.discussion.html_url }}
           DISCUSSION_TITLE: ${{ github.event.discussion.title }}
           DISCUSSION_NUMBER: ${{ github.event.discussion.number }}

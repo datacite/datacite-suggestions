@@ -27,17 +27,15 @@ jobs:
           TRANSFERRED_LABEL: ${{ vars.TRANSFERRED_LABEL }}
           DEST_REPO: ${{ vars.DEST_REPO }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/update_issue.py
   transfer_issue:
     if: ${{ ! contains(github.event.issue.labels.*.name, vars.KEEP_LABEL ) }}
     needs: update-issue
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
       - run: gh issue transfer "$ISSUE" datacite/product-suggestions-triage
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           ISSUE: ${{ github.event.issue.html_url }}
