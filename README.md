@@ -27,6 +27,7 @@ Keep an eye on your discussion in case that:
 ## How to Stay Up to Date
 Interested in keeping up with the latest developments at DataCite? 
 
-- Check the [Requests for Comment](https://github.com/datacite/datacite-suggestions/discussions/categories/requests-for-comment) category to contribute your feedback to in-process DataCite Metadata Schema and feature development activities.   
-- Check the [Updates from DataCite](https://github.com/datacite/datacite-suggestions/discussions/categories/updates-from-datacite) category to get the latest updates on releases, tweaks, and bug fixes.  
+- Check the [Requests for Comment](https://github.com/datacite/datacite-suggestions/discussions/categories/requests-for-comment) category in GitHub to contribute your feedback to in-process DataCite Metadata Schema and feature development activities.   
+- Check the [Updates from DataCite](https://github.com/datacite/datacite-suggestions/discussions/categories/updates-from-datacite) category in GitHub to get the latest updates on releases, tweaks, and bug fixes.  
+- See a high-level overview of current and upcoming activities on the [DataCite Roadmap page](https://datacite.org/roadmap/).  
 - [Subscribe to the DataCite community mailing list](https://datacite.org/newsletter/) for a round-up of all the latest DataCite news. 
